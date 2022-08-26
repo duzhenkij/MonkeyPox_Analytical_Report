@@ -84,19 +84,19 @@ df['symptoms_normalized'] = df['Symptoms'].\
 
 # all symptoms (including comma-separated) from series to a list
 symptoms = list(df['symptoms_normalized'])
-separeted_symptoms = []
+separated_symptoms = []
 
 for i in symptoms:
     if type(i) == str:
-        separeted_symptoms.extend(i.split(', '))
+        separated_symptoms.extend(i.split(', '))
 
 # all symptoms to dataframe
 sym_df = pd.DataFrame({
-    'symptoms': separeted_symptoms
+    'symptoms': separated_symptoms
 })
 
 # getting only unique symptoms from all using set
-separeted_unique_symptoms = set(separeted_symptoms)
+separeted_unique_symptoms = set(separated_symptoms)
 
 # searching for frequency of unique symptoms among all symptoms
 symptom = []
